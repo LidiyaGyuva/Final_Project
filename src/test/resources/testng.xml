@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="AllTests Suite">
+    <test name="AllTests">
+        <classes>
+            <class name="romashkaTest.RomashkaTestPage"/>
+            <class name="romashkaTest.RomashkaPart2Test"/>
+            <class name="romashkaTest.RomashkaProductCardTest"/>
+        </classes>
+    </test>
+</suite>
