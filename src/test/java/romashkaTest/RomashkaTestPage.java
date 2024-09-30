@@ -1,6 +1,8 @@
 package romashkaTest;
 
 import DriverSetUp.DriverSetUp;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import org.testng.annotations.Listeners;
 import romashkaSite.RomashkaMainPage;
 import io.qameta.allure.TmsLink;
@@ -25,15 +27,21 @@ public class RomashkaTestPage {
     public void stop(){
         driver.quit();
     }
-@TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/43")
+
     @Test(priority = 1)
+    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/43")
+    @Feature("Negative test")
+    @Description("Пошук товару по неправильним ключовим словам.")
     public void openNegativeSearch(){
         romashkaMainPage.openSite().clickSearch("КУРКА").checkAnswerTitle(driver).backPage()
                 .clickSearch("KURKA").checkAnswerTitle(driver).backPage()
                 .clickSearch("12345").checkAnswerTitle(driver).backPage();
     }
-@TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/44")
+
     @Test(priority = 2)
+    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/44")
+    @Feature("Click button menu")
+    @Description("Перевірка переходів між сторінками топового меню.")
     public void checkTopCategories(){
         romashkaMainPage.openSite().clickNovinkyButton()
         .checkPageTitle(driver, "Novinky").backPage()
@@ -41,8 +49,11 @@ public class RomashkaTestPage {
         .clickSalesButton().checkPageTitle(driver, "Sale").backPage();
 
     }
-@TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/45")
+
     @Test(priority = 3)
+    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/45")
+    @Feature("Click button menu")
+    @Description("Перевірка переходів між сторінками меню на головній сторінці.")
     public void clickOtherCategories(){
         romashkaMainPage.openSite().clickButtonMainPage("Sorochky").checkPageTitle(driver, "Sorochky").backPage()
                 .clickButtonMainPage("Verhny odyah").checkPageTitle(driver, "Verhny odyah").backPage()
@@ -51,8 +62,11 @@ public class RomashkaTestPage {
                 .clickButtonMainPage("Svetry").checkPageTitle(driver, "Svetry").backPage()
                 .clickButtonMainPage("Spidnytci").checkPageTitle(driver, "Spidnytci").backPage();
     }
-@TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/46")
+
     @Test(priority = 4)
+    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/46")
+    @Feature("Click button menu")
+    @Description("Перевірка переходів між сторінками субменю.")
     public void clickSubmenuBuyer(){
         romashkaMainPage.openSite().actionClickMenu("Vidguki").backPage()
                 .actionClickMenu("Akcyi").backPage()
@@ -65,8 +79,11 @@ public class RomashkaTestPage {
                 .actionClickMenu("Garantii").backPage()
                 .actionClickMenu("VidstezhutuZamovlenya").backPage();
     }
-@TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/47")
+
 @Test(priority = 5)
+@TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/47")
+@Feature("Negative test")
+@Description("Реєстрація з неправильними даними.")
     public void loginAndPasswordTest(){
         romashkaMainPage.openSite()
                 .avatarAction()

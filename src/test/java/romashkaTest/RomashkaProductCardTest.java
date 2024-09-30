@@ -1,6 +1,8 @@
 package romashkaTest;
 
 import DriverSetUp.DriverSetUp;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import io.qameta.allure.TmsLink;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
@@ -23,8 +25,11 @@ public class RomashkaProductCardTest {
     public void stop(){
         driver.quit();
     }
-    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/57")
+
     @Test(priority = 3)
+    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/57")
+    @Feature("Click button menu")
+    @Description("Перевірка переходів між сторінками нижнього меню.")
     public void clickFooterMenu(){
         romashkaProductCardAndFooter.openSite()
                 .clickOnLinkByText("Акції та лояльність")
@@ -37,31 +42,43 @@ public class RomashkaProductCardTest {
                 .clickOnLinkByText("Контакти")
                 .clickOnLinkByText("Відстежити замовлення");
     }
-    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/56")
+
     @Test(priority = 1)
+    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/56")
+    @Feature("Product card")
+    @Description("Перевірка в карточці товару переходи між кольорами, та внутрішня інформація.")
     public void checkOdyagCard(){
         romashkaProductCardAndFooter.openSite()
                 .clickPizhama()
                 .clickColorPizhama()
                 .clicksubmenuProductCard();
     }
-    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/55")
+
 @Test(priority = 2)
+@TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/55")
+    @Feature("Product card")
+@Description("Перевірка в карточці товару переходи між кольорами, та внутрішня інформація.")
     public void checkSumkiCard(){
         romashkaProductCardAndFooter.openSite()
                 .clickSumkiProduct()
                 .checkColorSumki()
                 .clicksubmenuProductCard();
 }
-    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/54")
+
 @Test(priority = 5)
+@TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/54")
+@Feature("Wishlist")
+@Description("Перевірка пошуку товару по ключовому слову та додавання його в лист обраного.")
     public void checkSearchAndAddWishlist(){
         romashkaProductCardAndFooter.openSite()
                 .searchRedRemin()
                 .searchRedSumka();
 }
-    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/58")
+
 @Test(priority = 4)
+@TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/58")
+@Feature("Negative test")
+@Description("Відправка пустих полів для анкети.")
     public void checkEmptyInput() {
         romashkaProductCardAndFooter.openSite()
                 .openRegistration()

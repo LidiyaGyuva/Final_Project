@@ -1,6 +1,8 @@
 package romashkaTest;
 
 import DriverSetUp.DriverSetUp;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import io.qameta.allure.TmsLink;
 import org.testng.annotations.Listeners;
 import romashkaSite.RomashkaPart2;
@@ -25,8 +27,11 @@ public class RomashkaPart2Test {
         driver.quit();
     }
 
-    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/50")
+
     @Test(priority = 1)
+    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/50")
+    @Feature("Filter")
+    @Description("Перевірка фільтрації товарів по ціні.")
     public void checkPriceFilter(){
 
             romashkaPart2.openNewPage()
@@ -37,16 +42,22 @@ public class RomashkaPart2Test {
                     .checkMaxPriceTitle(driver);
     }
 
-    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/49")
+
 @Test(priority = 2)
+@TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/49")
+@Feature("Filter")
+@Description("Перевірка фільтрації товарів по розміру та типу товару.")
     public void FilterSearch(){
         romashkaPart2.openNewPage()
                 .checkFilterSizeAndType()
                 .searchSvetrAfterFilter();
 
 }
-    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/51")
+
 @Test(priority = 3)
+@TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/51")
+@Feature("Click button menu")
+@Description("Перевірка сортування товарів по всім категоріям.")
     public void sortOtherButton(){
         romashkaPart2.openNewPage()
                 .sortTovaryBestSales();
@@ -57,8 +68,12 @@ public class RomashkaPart2Test {
         romashkaPart2.openNewPage()
                 .sortOtherSortType();
 }
-    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/53")
+
 @Test(priority = 4)
+@TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/53")
+    @Feature("Cart")
+@Description("Відфільтрувати товари по кольору, відкрити один із товарів, додати " +
+        "його в корзину та перевірити його наявність в корзині.")
     public void clickInKorzinaProduct(){
         romashkaPart2.openNewPage()
                 .clickColorFilter()
@@ -66,8 +81,11 @@ public class RomashkaPart2Test {
                 .clickKorzinaButton()
                 .readTextAboutKorzina();
 }
-    @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/52")
+
 @Test(priority = 5)
+@TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/52")
+@Feature("Product card")
+@Description("Перевірити переходи фото товару в праву та ліву сторону.")
     public void moveToPhotoProduct(){
         romashkaPart2.openNewPage()
                 .openAnimalCategories()
