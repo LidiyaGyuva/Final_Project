@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import utils.MyAllureListeners;
 import utils.MyTestListeners;
 
 @Listeners({MyTestListeners.class})
@@ -29,19 +28,22 @@ public class RomashkaPart2Test {
     @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/50")
     @Test(priority = 1)
     public void checkPriceFilter(){
-        romashkaPart2.openNewPage()
-                .openFilterAndEnterMinPrice()
-               .checkPriceTitle(driver);
-        romashkaPart2.openNewPage()
-                .openFilterAndEnterMaxPrice()
-                .checkMaxPriceTitle(driver);
+
+            romashkaPart2.openNewPage()
+                    .openFilterAndEnterMinPrice()
+                    .checkPriceTitle(driver);
+            romashkaPart2.openNewPage()
+                    .openFilterAndEnterMaxPrice()
+                    .checkMaxPriceTitle(driver);
     }
+
     @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/49")
 @Test(priority = 2)
     public void FilterSearch(){
         romashkaPart2.openNewPage()
                 .checkFilterSizeAndType()
                 .searchSvetrAfterFilter();
+
 }
     @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/51")
 @Test(priority = 3)
