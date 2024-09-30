@@ -83,7 +83,7 @@ public class RomashkaTestPage {
 @Test(priority = 5)
 @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/47")
 @Feature("Negative test")
-@Description("Реєстрація з неправильними даними.")
+@Description("Реєстрація з неправильними даними")
     public void loginAndPasswordTest(){
         romashkaMainPage.openSite()
                 .avatarAction()

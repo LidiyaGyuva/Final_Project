@@ -57,7 +57,7 @@ public class RomashkaPart2Test {
 @Test(priority = 3)
 @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/51")
 @Feature("Click button menu")
-@Description("Перевірка сортування товарів по всім категоріям.")
+@Description("Перевірка сортування товарів по всім категоріям")
     public void sortOtherButton(){
         romashkaPart2.openNewPage()
                 .sortTovaryBestSales();

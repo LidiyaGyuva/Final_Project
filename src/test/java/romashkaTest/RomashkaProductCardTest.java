@@ -29,7 +29,7 @@ public class RomashkaProductCardTest {
     @Test(priority = 3)
     @TmsLink("https://lidiyagyuva.testrail.io/index.php?/cases/view/57")
     @Feature("Click button menu")
-    @Description("Перевірка переходів між сторінками нижнього меню.")
+    @Description("Перевірка переходів між сторінками нижнього меню")
     public void clickFooterMenu(){
         romashkaProductCardAndFooter.openSite()
                 .clickOnLinkByText("Акції та лояльність")
